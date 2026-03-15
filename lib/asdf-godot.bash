@@ -117,7 +117,7 @@ get_download_filename() {
 	version="$1"
 
 	platform=$(uname | tr '[:upper:]' '[:lower:]')
-	arch=$(uname -m)
+	arch=$(dpkg-architecture -qDEB_BUILD_ARCH)
 	join_char="."
 
 	if [ "${platform}" == 'darwin' ]; then
